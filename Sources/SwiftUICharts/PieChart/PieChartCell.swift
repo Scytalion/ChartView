@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct PieSlice: Identifiable {
+struct PieSlice: Identifiable, Equatable {
     var id = UUID()
     var startDeg: Double
     var endDeg: Double
