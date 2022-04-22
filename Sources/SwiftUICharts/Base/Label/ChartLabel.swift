@@ -59,13 +59,29 @@ public struct ChartLabel: View {
     private var labelColor: Color {
         switch labelType {
         case .title:
+            #if os(watchOS)
+            return Color.primary
+            #else
             return Color(UIColor.label)
+            #endif
         case .legend:
+            #if os(watchOS)
+            return Color.secondary
+            #else
             return Color(UIColor.secondaryLabel)
+            #endif
         case .subTitle:
+            #if os(watchOS)
+            return Color.primary
+            #else
             return Color(UIColor.label)
+            #endif
         case .largeTitle:
+            #if os(watchOS)
+            return Color.primary
+            #else
             return Color(UIColor.label)
+            #endif
         case .custom(_, _, let color):
             return color
         }
